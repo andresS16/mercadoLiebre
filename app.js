@@ -10,7 +10,7 @@ const path = require('path');
 //app.use(express.static('/public'));
 
 // Ruta para cargar index.html cuando se acceda a /home
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     let rutaHtml = path.resolve(__dirname, './views/home.html');
     res.sendFile(rutaHtml, (err) => {
         if (err) {
