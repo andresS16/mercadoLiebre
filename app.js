@@ -4,11 +4,9 @@ const app = express();
 const path = require('path');
 
 
-app.listen(3030, () => {
-    console.log("Servidor corriendo");
-});
 
-app.use(express.static(path.join(__dirname, '/public')));
+
+
 //app.use(express.static('/public'));
 
 // Ruta para cargar index.html cuando se acceda a /home
@@ -47,3 +45,8 @@ app.get('/login', (req, res) => {
         }
     });
 });
+app.use(express.static(path.join(__dirname, '/public')));
+const PORT  = process.env.PORT || 3000
+app.listen( PORT, () => console.log(`Server up on PORT:  http://localhost:${PORT}`) );
+
+//app.listen(3030, () => {console.log("Servidor corriendo")});
