@@ -58,6 +58,6 @@ app.get('/register', (req, res) => {
 });
 app.use(express.static(path.join(__dirname, '/public')));
 const PORT  = process.env.PORT || 3000
-app.listen( PORT, () => console.log(`Server up on PORT:  http://localhost:${PORT}`) );
+/*app.listen( PORT, () => console.log(`Server up on PORT:  http://localhost:${PORT}`) );*/
 
-//app.listen(3030, () => {console.log("Servidor corriendo")});
+app.listen(3030, () => {console.log("Servidor corriendo")});
