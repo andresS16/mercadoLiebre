@@ -45,6 +45,17 @@ app.get('/login', (req, res) => {
         }
     });
 });
+app.get('/register', (req, res) => {
+    let rutaHtml = path.join(__dirname, './views/register.html');
+    res.sendFile(rutaHtml, (err) => {
+        if (err) {
+            console.error('Error al enviar el archivo:', err);
+            res.status(err.status).end();
+        } else {
+            console.log('Archivo enviado correctamente');
+        }
+    });
+});
 app.use(express.static(path.join(__dirname, '/public')));
 const PORT  = process.env.PORT || 3000
 app.listen( PORT, () => console.log(`Server up on PORT:  http://localhost:${PORT}`) );
